@@ -1,0 +1,14 @@
+= patterns-demos
+
+This repo contains some examples of Design Patterns in Java; it was split off from my main 
+https://github.com/IanDarwin/javasrc[javasrc repo] to keep the latter from becoming bottom-heavy.
+
+== Readings
+
+The original book that popularized Design Patterns - after they were in use for a decade in the CS community - is
+Design Patterns: Elements of Reusable Software,
+by Gamma, Helm, Johnson and Vlissides, known more concisely as the Gang of Four or even the GoF.
+
+A less academic, more memorable read is Head-First Design Patterns by O'Reilly.
+
+More: coming soon!
