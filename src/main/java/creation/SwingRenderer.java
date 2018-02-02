@@ -1,4 +1,4 @@
-package patterns.creation;
+package creation;
 
 import javax.swing.JOptionPane;
 

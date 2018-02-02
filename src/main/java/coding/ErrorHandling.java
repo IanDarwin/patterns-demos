@@ -1,4 +1,4 @@
-package patterns.coding;
+package coding;
 
 /**
  * Error handling generally belongs in user-interface code, not

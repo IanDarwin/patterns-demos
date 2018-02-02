@@ -1,4 +1,4 @@
-package patterns.creation;
+package creation;
 
 import java.io.IOException;
 import java.io.InputStream;

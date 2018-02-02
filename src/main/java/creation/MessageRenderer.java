@@ -1,4 +1,4 @@
-package patterns.creation;
+package creation;
 
 /** Dummy interface, just for use in Factory demos */
 public interface MessageRenderer {

@@ -1,4 +1,4 @@
-package patterns.behavioral;
+package behavioral;
 
 /** A simple demo of ChainOfResponsibility,
  * a GoF Design Pattern.

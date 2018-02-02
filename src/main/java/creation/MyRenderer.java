@@ -1,4 +1,4 @@
-package patterns.creation;
+package creation;
 
 public class MyRenderer implements MessageRenderer {
 	public void renderMessage(String message) {

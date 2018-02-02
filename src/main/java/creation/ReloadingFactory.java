@@ -1,4 +1,4 @@
-package patterns.creation;
+package creation;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,6 +38,7 @@ public class ReloadingFactory {
 	}
 
 	/** Generic getBean(name, TypeParameter) a la Spring 3.x */
+	@SuppressWarnings("unchecked")
 	public static <T> T getBean(String name, Class<?> T) {
 		try {
 			final String clazzName = getConfigProperty(name);

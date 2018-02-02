@@ -1,4 +1,4 @@
-package patterns.behavioral;
+package behavioral;
 
 import java.io.BufferedReader;
 import java.io.IOException;

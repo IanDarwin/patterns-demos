@@ -1,4 +1,4 @@
-package patterns.behavioral;
+package behavioral;
 
 import java.util.Observable;
 import java.util.Observer;
