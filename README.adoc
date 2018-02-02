@@ -6,9 +6,12 @@ https://github.com/IanDarwin/javasrc[javasrc repo] to keep the latter from becom
 == Readings
 
 The original book that popularized Design Patterns - after they were in use for a decade in the CS community - is
-Design Patterns: Elements of Reusable Software,
+https://www.amazon.com/dp/0201633612[Design Patterns: Elements of Reusable Software],
 by Gamma, Helm, Johnson and Vlissides, known more concisely as the Gang of Four or even the GoF.
 
-A less academic, more memorable read is Head-First Design Patterns by O'Reilly.
+A less academic, more memorable read is O'Reilly's
+https://www.amazon.ca/dp/0596007124[Head-First Design Patterns].
+
+My writings: the OO chapter of my https://www.amazon.ca/dp/144933704X[Java Cookbook], 3rd edition.
 
 More: coming soon!
