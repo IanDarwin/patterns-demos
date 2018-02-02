@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * Text-mode game, and, not intended to be a full RPG game, sorry. 
  * This is NOT the only way to implement state machines;
  * they have been done for years in many languages as
- * e.g., transition tables of integers.
+ * e.g., transition tables of integers, pointers to structures, etc.
  */
 public class StateMachineDemo {
 
