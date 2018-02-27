@@ -31,16 +31,22 @@ public class Auction {
 		this.minBid = minBid;
 	}
 
+	public boolean isCancelled() {
+		return cancelBy != null;
+	}
+
+	/** Submit a bid */
 	public void bid(double amount, Client bidder) {
 		if (amount < minBid) {
-			System.out.printf("REJECT bid from %s for %s, must be %.2f\n", bidder, this.description, amount);
+			System.out.printf("REJECT bid from %s for %s, must be %.2f\n", bidder, description, amount);
 			return;
 		}
-		if (cancelBy != null) {
-			System.out.printf("REJECT bid from %s for CANCELED auction %s\n", bidder, this.description);
+		if (isCancelled()) {
+			System.out.printf("REJECT bid from %s for CANCELED auction %s\n", bidder, description);
 			return;
 		}
 		bids.add(new Bid(amount, bidder));
+		System.out.printf("Accepted bid of %.2f from %s for auction of %s\n", amount, bidder, description);
 		Bid highBid = null;
 		double highBidAmt = 0;
 		for (Bid bid : bids) {
@@ -52,13 +58,22 @@ public class Auction {
 		this.highBid = highBid;
 	}
 
+	/** Cancel an Auction, irrevocably */
 	public void cancel(Client cnxer, String reason) {
 		this.cancelBy = cnxer;
 		this.cancelReason = reason;
 	}
 
 	public String toString() {
-		return String.format("%s's Auction of %s: high bid %.2f by %s",
-			seller.name, description, highBid.amount, highBid.bidder);
+		if (isCancelled()) {
+			return String.format("CANCELLED: %s's auction of %s", seller, description);
+		}
+		if (highBid == null) {
+			return String.format("UNSOLD: %s's auction of %s did not get %.2f",
+				seller, description, minBid);
+		} else {
+			return String.format("Will Sell: %s's auction of %s, high bid %.2f",
+				seller, description, highBid.amount);
+		}
 	}
 }
