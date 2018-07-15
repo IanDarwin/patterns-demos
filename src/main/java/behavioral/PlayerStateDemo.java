@@ -1,4 +1,4 @@
-package patterns.behavioral;
+package behavioral;
 
 interface State {
 	abstract void stop();
