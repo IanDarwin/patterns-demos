@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/** A simple demo of using a State machine implemented as Java classes.
- * Text-mode game, and, not intended to be a full RPG game, sorry. 
+/**
+ * A simple demo of using a State machine implemented as Java classes.
+ * A text-mode game, and, not intended to be a full RPG game, sorry. 
  * This is NOT the only way to implement state machines;
  * they have been done for years in many languages as
  * e.g., transition tables of integers, pointers to structures, etc.
  */
-public class StateMachineDemo {
+public class GameStateDemo {
 
 	/** 
 	 * Game on!
@@ -18,13 +19,13 @@ public class StateMachineDemo {
 	public static void main(String[] args) throws IOException {
 		display("Welcome to the game");
 		doHelp();
-		StateMachineDemo game = new StateMachineDemo();
+		GameStateDemo game = new GameStateDemo();
 		game.state.lookAround();
 		game.play();
 	}
 
 	enum Command { LOOK, ENTER, EXIT, QUIT }
-	
+
 	abstract class State {
 		public abstract void lookAround();
 		public abstract void goInside();
@@ -54,7 +55,8 @@ public class StateMachineDemo {
 
 	public State inRoomState = new State() {
 		public void lookAround() {
-			display("The room is full of gold");
+			// This would map to the description of a particular room
+			display("The room is full of gold!");
 		}
 		public void goInside() {
 			display("You are already in the room");
@@ -93,7 +95,6 @@ public class StateMachineDemo {
 		System.out.println(mesg);
 	}
 
-
 	private final State INITIAL_STATE = inHallwayState;
 
 	private State state = INITIAL_STATE;
@@ -106,5 +107,4 @@ public class StateMachineDemo {
 			oneMove(line);
 		}
 	}
-
 }
