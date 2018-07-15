@@ -42,6 +42,7 @@ public class BidPaySite {
 	public void submitCommand(Command command) {
 		// These could go into a queue to serialize them, or we could make sure
 		// that the methods exposed to the Command are all thread-safe.
+		// For now we just let the command do its thing:
 		command.execute();
 	}
 
