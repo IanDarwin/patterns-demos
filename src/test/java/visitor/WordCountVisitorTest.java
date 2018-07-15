@@ -21,5 +21,13 @@ public class WordCountVisitorTest {
 		target.visitTextNode(textNode);
 		assertEquals(5, target.getWordCount());
 	}
+	
+	@Test
+	public void testCounterEmptyString() {
+		final TextNode textNode = new TextNode();
+		textNode.setText("");
+		target.visitTextNode(textNode);
+		assertEquals(0, target.getWordCount());
+	}
 
 }

@@ -18,6 +18,8 @@ public class WordCountVisitor extends Visitor {
 	}
 
 	private int wordCount(String text) {
+		if (text == null || (text = text.trim()).length() == 0)
+			return 0;
 		// Replace all non-space chars with nothing;
 		// add one because "hello word" has one space, is two words.
 		return text.trim().replaceAll("[^\\s]", "").length() + 1;
