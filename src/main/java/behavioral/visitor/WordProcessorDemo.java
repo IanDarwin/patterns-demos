@@ -1,4 +1,4 @@
-package visitor;
+package behavioral.visitor;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;

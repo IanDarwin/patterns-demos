@@ -1,4 +1,4 @@
-package visitor;
+package behavioral.visitor;
 
 /**
  * Count the words in all the nodes.

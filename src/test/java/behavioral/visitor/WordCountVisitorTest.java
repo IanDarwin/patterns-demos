@@ -1,4 +1,4 @@
-package visitor;
+package behavioral.visitor;
 
 import static org.junit.Assert.*;
 

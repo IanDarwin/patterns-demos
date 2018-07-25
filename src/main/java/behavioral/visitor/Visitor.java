@@ -1,4 +1,4 @@
-package visitor;
+package behavioral.visitor;
 
 /** 
  * Visitors have to know how to visit every main kind of Node;
