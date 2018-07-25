@@ -18,6 +18,6 @@ The OO chapter of my https://www.amazon.ca/dp/144933704X[Java Cookbook], 3rd edi
 
 Command Pattern, in Oracle's Java Magazine May/June 2018. http://www.javamagazine.mozaicreader.com/MayJune2018/Default/15/0#&pageSet=15
 
-State Pattern, in Oracle's Java Magazine, July/August 2018.
+State Pattern, in Oracle's Java Magazine, July/August 2018. http://www.javamagazine.mozaicreader.com/JulyAugust2018#&pageSet=66
 
 Visitor Pattern, in Oracle's Java Magazine, September/October 2018.
