@@ -17,8 +17,12 @@ public class FileVisitorDemo {
 		
 		// Set the starting path
 		Path startingPath = Paths.get(".");
+
 		// Instantiate the Visitor object
-		FileVisitor<Path> visitor = new IndentingFileVisitor();
+		FileVisitor<Path> visitor;
+		visitor = new TrivialListerVisitor();
+		// visitor = new IndentingFileVisitor();
+
 		// Use the built-in walkFileTree client to visit all directory,file nodes
 		Files.walkFileTree(startingPath, visitor);
 	}
