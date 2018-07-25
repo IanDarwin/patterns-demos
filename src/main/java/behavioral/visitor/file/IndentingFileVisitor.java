@@ -6,6 +6,14 @@ import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 
+/** 
+ * A simple indentation-based directory tree lister.
+ * Works, but since it's depth-first, entries in a directory may (depending on 
+ * the underlying filesystem) appear after the contents of one of its subdirectories.
+ * To fix this might involve a stack of List<Path> that is created in preVisitDirectory(),
+ * added to in visitFile(), and printed out in postVisitDirectory(). This would be somewhat
+ * beyond what's needed to show the operation of the SimpleFileVistor.
+ */
 class IndentingFileVisitor extends SimpleFileVisitor<Path> {
 	int indent = 0;
 	
