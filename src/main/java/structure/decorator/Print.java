@@ -7,7 +7,7 @@ public class Print extends ImageDecorator {
 	/** PrintWidth, PrintHeight are in inches for our US audience */
 	private double printWidth, printHeight;
 	
-	public Print(PhotoImage target, double printWidth, double printHeight) {
+	public Print(double printWidth, double printHeight, PhotoImage target) {
 		super(target);
 		this.printWidth = printWidth;
 		this.printHeight = printHeight;
@@ -15,7 +15,7 @@ public class Print extends ImageDecorator {
 
 	@Override
 	public String getDescription() {
-		return String.format("%s(%4.1f x %4.1f in)", target.getTitle(), getPrintWidth(), getPrintHeight());
+		return target.getDescription() + " " + String.format("(%4.1f x %4.1f in)", getPrintWidth(), getPrintHeight());
 	}
 
 	public double getPrintWidth() {

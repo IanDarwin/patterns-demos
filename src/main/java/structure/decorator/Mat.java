@@ -3,7 +3,7 @@ package structure.decorator;
 public class Mat extends ImageDecorator {
 	String color;
 	
-	public Mat(PhotoImage target, String color) {
+	public Mat(String color, PhotoImage target) {
 		super(target);
 		this.color = color;
 	}
