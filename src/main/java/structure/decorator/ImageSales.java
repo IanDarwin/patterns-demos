@@ -8,7 +8,7 @@ public class ImageSales {
 	 */
 	public static void main(String[] args) {
 		// Create an un-decorated image
-		final PhotoImage image = new PhotoImage("Sunset at Tres Rios", "2020/ifd12345.jpg");
+		final PhotoImage image = new PhotoImage("Sunset at Tres Ríos", "2020/ifd12345.jpg");
 
 		// Make a print of that, on usletter paper
 		Print im1 = new Print(11, 8.5, image);
