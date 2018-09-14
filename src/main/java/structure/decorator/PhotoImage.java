@@ -10,10 +10,6 @@ public class PhotoImage {
 	String fileName;
 	/** How many pixels there are in the image file */
 	int pixWidth, pixHeight;
-	
-	public String getDescription() {
-		return getTitle();
-	}
 
 	public PhotoImage() {
 		// Empty; used in Decorators.
@@ -25,10 +21,14 @@ public class PhotoImage {
 		this.fileName = fileName;
 	}
 	
+	public String getDescription() {
+		return getTitle();
+	}
+
 	/** Default toString() just uses getDescription */
 	@Override
 	public String toString() {
-		return getTitle();
+		return getDescription();
 	}
 
 	public String getTitle() {
