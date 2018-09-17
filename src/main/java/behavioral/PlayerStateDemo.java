@@ -58,12 +58,13 @@ public class PlayerStateDemo implements State {
 
 		@Override
 		public void start() {
-			
+			currentState = playingState;
+			currentState.enterState();
 		}
 
 		@Override
 		public void pause() {
-			// Do nothing
+			// Do nothing, already stopped
 		}
 
 		@Override
