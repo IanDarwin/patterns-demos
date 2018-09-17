@@ -20,7 +20,11 @@ public class PhotoImage {
 		this.title = title;
 		this.fileName = fileName;
 	}
-	
+
+	/**
+	 * Get a printable description; may be more detailed than toString()
+	 * but at any rate is the example delegation method.
+	 */
 	public String getDescription() {
 		return getTitle();
 	}

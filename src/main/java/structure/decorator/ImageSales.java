@@ -19,7 +19,7 @@ public class ImageSales {
 			new Print(19, 11,
 				new Frame(
 					new Mat("Lime Green",
-						new PhotoImage("Goodbye at the Station", "1987/ifd.00042.jpg"))));
+						new PhotoImage("Goodbye at the Station", "1968/ifd.00042.jpg"))));
 		addToPrintOrder(im2);
 
 		// Make a digital print sale
