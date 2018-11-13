@@ -31,6 +31,13 @@
 			<version>1.3.1-SNAPSHOT</version>
 		</dependency>
 
+		<!-- javax.interceptor, used in one Proxy example -->
+		<dependency>
+			<groupId>javax.interceptor</groupId>
+			<artifactId>javax.interceptor-api</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
 		<!-- Test early and often -->
 		<dependency>
 		<groupId>junit</groupId>
