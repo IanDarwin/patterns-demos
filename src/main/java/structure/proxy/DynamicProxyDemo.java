@@ -13,7 +13,6 @@ import java.lang.reflect.Method;
  */
 public class DynamicProxyDemo {
 
-
 	/** Here we show the whole thing in operation. */
 	public static void main(String[] args) {
 
@@ -29,8 +28,8 @@ public class DynamicProxyDemo {
 	}
 
 	public static QuoteServer getQuoteServer() {
-		QuoteServer objectBeingProxied = new QuoteServerImpl();
-		InvocationHandler handler = new MyInvocationHandler(objectBeingProxied);
+		QuoteServer target = new QuoteServerImpl();
+		InvocationHandler handler = new MyInvocationHandler(target);
 		return (QuoteServer) Proxy.newProxyInstance(
 			QuoteServer.class.getClassLoader(),
             new Class[] { QuoteServer.class }, handler);
