@@ -6,7 +6,6 @@ package structure.proxy;
  */
 public class SimpleProxyDemo {
 
-
 	/** Here we show the whole thing in operation. */
 	public static void main(String[] args) {
 
