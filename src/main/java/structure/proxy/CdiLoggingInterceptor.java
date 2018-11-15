@@ -1,6 +1,7 @@
 package structure.proxy;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.interceptor.AroundInvoke;
@@ -13,25 +14,26 @@ import javax.interceptor.InvocationContext;
  * on GitHub at https://github.com/t1/logging-interceptor
  */
 @Interceptor
-public class LoggingInterceptor {
+public class CdiLoggingInterceptor {
 
-	public LoggingInterceptor() {
+	public CdiLoggingInterceptor() {
 		// System.out.println("LoggingInterceptor.init()");
 	}
 
 	// @AroundInvoke applies to business method; see also @AroundTimeout for timeout methods, etc.
 	@AroundInvoke
 	public Object log(InvocationContext ctx) throws Throwable {
-		Object[] parameters = ctx.getParameters();
+		final Object[] parameters = ctx.getParameters();
+		final Method method = ctx.getMethod();
 		String firstArg = (parameters.length > 0) ? "First is: " + format(parameters[0]) : "(empty)";
 		log(String.format("About to call %s with %d arg(s): %s",
-				ctx.getMethod().getName(), parameters.length, firstArg));
+				method.getName(), parameters.length, firstArg));
 		Object o = ctx.proceed();	// The actual call!
-		log("Returned " + format(o) + " from method " + ctx.getMethod().getName());
+		log("Returned " + format(o) + " from method " + method.getName());
 		return o;
 	}
 	
-	/** Well, this part is no longer basic; format the argument list a bit */
+	/** Well, this part is no longer trivial; format the argument list a bit */
 	String format(Object o) {
 		if (o instanceof String) {
 			return (String)o;
