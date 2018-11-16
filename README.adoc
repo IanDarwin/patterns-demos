@@ -20,6 +20,8 @@ Command Pattern, in Oracle's Java Magazine May/June 2018. http://www.javamagazin
 
 State Pattern, in Oracle's Java Magazine, July/August 2018. http://www.javamagazine.mozaicreader.com/JulyAugust2018#&pageSet=66
 
-Visitor Pattern, in Oracle's Java Magazine, September/October 2018. http://www.javamagazine.mozaicreader.com/SeptemberOctober2018/Default/66/0
+Visitor Pattern, in Oracle's Java Magazine, September/October 2018. 
+http://www.javamagazine.mozaicreader.com/SeptemberOctober2018/Default/66/0
 
 Decorator Pattern, in Oracle's Java Magazine, November/December 2018.
+http://www.javamagazine.mozaicreader.com/NovemberDecember2018/Default/67/0
