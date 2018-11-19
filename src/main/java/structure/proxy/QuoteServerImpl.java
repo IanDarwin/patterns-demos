@@ -3,7 +3,6 @@ package structure.proxy;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /** Our private implementation of the interface */
 public class QuoteServerImpl implements QuoteServer {
 
@@ -13,6 +12,7 @@ public class QuoteServerImpl implements QuoteServer {
 		sayings.add("A stitch in time... is better late than never");
 		sayings.add("JavaScript is to Java as George Burns is to George Washington.");
 		sayings.add("The more old you get, the more you forget");
+		sayings.add("Always in motion, the future is. -- Yoda");
 	}
 
 	/** Serve up a randomly-chosen quote */

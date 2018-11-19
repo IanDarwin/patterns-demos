@@ -1,0 +1,69 @@
+= CDI Interceptors
+
+The CDI mechanism provides support for this form of proxying as `Interceptors`
+that can be applied to enterprise components via annotations (usually) or by XML configuration.
+These are sometimes called decorators because you ask for them, but there is no requirement
+that you ask for a specific class.
+
+Here is how a CDI implementation of our logging interceptor might be used, in a business method
+(the curly braces around the class descriptor remind us that it's an array,
+in case you want to apply multiple interceptors to the same method).
+This annotation can also be applied at class level.
+
+----
+@Interceptors({CdiLoggingInterceptor.class})
+public void validateCredit() {
+	// do some work here
+}
+----
+
+Here is the code for the logging interceptor, or proxy:
+
+----
+import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
+import javax.interceptor.InvocationContext;
+
+/**
+ * A Logging Interceptor for CDI.
+ */
+@Interceptor
+public class CdiLoggingInterceptor {
+
+    // @AroundInvoke applies to business method; there are
+	// also annotations for constructors, timeouts, etc.
+    @AroundInvoke
+    public Object log(InvocationContext ctx) throws Throwable {
+        Object[] parameters = ctx.getParameters();
+        String firstArg = (parameters.length > 0) ?
+			"First is: " + formatArg(parameters[0]) : "(empty)";
+		String methodName = ctx.getMethod().getName();
+        log(String.format("About to call %s with %d arg(s): %s",
+                methodName, parameters.length, firstArg));
+        Object o = ctx.proceed();   // The actual call!
+        log("Returned " + format(o) + " from method " + methodName);
+        return o;
+    }
+	...
+}
+----
+
+A single parameter, an `InvocationContext`, is passed
+which contains the method descriptor, the arguments, etc.
+This has a `getMethod()` call which returns the standard Method descriptor, and
+a `getParameters()` call which gives you the argument list if you want to examine or modify it.
+The `format()` and `log()` methods aren't shown here but are in the online source.
+The context `proceed()` method takes the place of the "invoke" method.
+
+One might think this is a Decorator rather than a Proxy because we are naming the
+implementation class.
+However, while the `@Interceptors` specifies an exact class,
+CDI does allow you to use custom annotations
+and resolve the implementation class at runtime using qualifier annotations;
+I've not given a full example to keep the code size manageable.
+The reader is referred to 
+https://docs.oracle.com/javaee/7/api/javax/interceptor/package-summary.html#package.description
+for more details on the `javax.interceptor` package.
+and
+https://docs.oracle.com/javaee/7/tutorial/cdi-basic.htm
+for tutorial information on CDI itself.
