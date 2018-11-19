@@ -27,6 +27,7 @@ public class SimpleProxyDemo {
 				return target.getQuote();
 			}
 			public void addQuote(String newQuote) {
+				// Could put security checking here
 				System.out.println("Calling addQuote()");
 				target.addQuote(newQuote);
 			}
