@@ -31,6 +31,7 @@ public class TextNode implements Node {
 	public String getAsDraft() {
 		// Break text into chunks of up to 72 chars, then print
 		return null;
+	}
 
 	/** The actual Visitor acceptor */
 	public void accept(Visitor v) {
