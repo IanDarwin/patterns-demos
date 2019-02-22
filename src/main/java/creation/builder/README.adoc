@@ -1,0 +1,19 @@
+= Builder
+
+Builder pattern moves the creational interface from traditional constructors
+to a new Builder class. The benefit is that, instead of a single method with
+a zillion arguments, many of which may be of the same type (int and String
+are common), you have a Builder object with setter-like methods to install
+the various fields into the builder before the call to build().
+
+The build() method also provides a choke point for cross-field validation.
+
+The Builder may be a top-level class distinct from the built class, in which
+case the constructor must remain public (or at least package visible); this
+is how IntelliJ's `Replace Constructor With Builder` refactoring does things
+when it gets to create the builder. Alternately, as shown here, the Builder
+can be an inner class of the built class, in which case the Builder methods
+are public and the constructor(s) become private; IRL you only need the
+constructor that accepts the Builder as an argument.
+
+
