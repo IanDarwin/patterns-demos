@@ -7,8 +7,11 @@ public class IOStreamsDemo {
 	FileProvider foo;
 	
 	void demo() throws Exception {
+		try (
 		BufferedReader is = new BufferedReader(new FileReader("some filename here"));
 		PrintWriter pout = new PrintWriter(new FileWriter("output filename here"));
-		LineNumberReader lrdr = new LineNumberReader(new FileReader(foo.getFile()));
+		LineNumberReader lrdr = new LineNumberReader(new FileReader(foo.getFile()))) {
+			// empty
+		}
 	}
 }
