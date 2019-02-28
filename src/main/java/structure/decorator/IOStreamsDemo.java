@@ -11,7 +11,7 @@ public class IOStreamsDemo {
 		BufferedReader is = new BufferedReader(new FileReader("some filename here"));
 		PrintWriter pout = new PrintWriter(new FileWriter("output filename here"));
 		LineNumberReader lrdr = new LineNumberReader(new FileReader(foo.getFile()))) {
-			// empty
+			// empty - wrapped in try(){} to silence leak warnings.
 		}
 	}
 }
