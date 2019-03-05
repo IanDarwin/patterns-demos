@@ -27,4 +27,5 @@ http://www.javamagazine.mozaicreader.com/SeptemberOctober2018/Default/66/0
 Decorator Pattern, in Oracle's Java Magazine, November/December 2018.
 http://www.javamagazine.mozaicreader.com/NovemberDecember2018/Default/67/0
 
-Proxy Pattern, coming soon.
+Proxy Pattern, in Oracle's Java Magazine, March/April 2019
+http://www.javamagazine.mozaicreader.com/MarchApril2019/Default/53/0
