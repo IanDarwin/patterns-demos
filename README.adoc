@@ -17,14 +17,17 @@ https://www.amazon.ca/dp/0596007124[Head-First Design Patterns].
 
 The OO chapter of my https://www.amazon.ca/dp/144933704X[Java Cookbook], 3rd edition.
 
-Command Pattern, in Oracle's Java Magazine May/June 2018. http://www.javamagazine.mozaicreader.com/MayJune2018/Default/15/0#&pageSet=15
+Command Pattern, in Oracle's Java Magazine May/June 2018. 
+https://blogs.oracle.com/javamagazine/the-command-pattern-in-depth
 
-State Pattern, in Oracle's Java Magazine, July/August 2018. http://www.javamagazine.mozaicreader.com/JulyAugust2018#&pageSet=66
+State Pattern, in Oracle's Java Magazine, July/August 2018. 
+https://blogs.oracle.com/javamagazine/the-state-pattern
 
 Visitor Pattern, in Oracle's Java Magazine, September/October 2018. 
-http://www.javamagazine.mozaicreader.com/SeptemberOctober2018/Default/66/0
+https://blogs.oracle.com/javamagazine/the-visitor-design-pattern-in-depth
 
 Decorator Pattern, in Oracle's Java Magazine, November/December 2018.
-http://www.javamagazine.mozaicreader.com/NovemberDecember2018/Default/67/0
+https://blogs.oracle.com/javamagazine/the-decorator-pattern-in-depth
 
-Proxy Pattern, coming soon.
+Proxy Pattern, in Oracle's Java Magazine, March/April 2019
+https://blogs.oracle.com/javamagazine/the-proxy-pattern
