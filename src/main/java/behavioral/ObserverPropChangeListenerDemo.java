@@ -11,18 +11,18 @@ public class ObserverPropChangeListenerDemo extends Object {
 	MyView view;
 	MyModel model;
 
+	public static void main(String[] av) {
+		ObserverPropChangeListenerDemo me = new ObserverPropChangeListenerDemo();
+		me.runTheMainApplication();
+	}
+
 	public ObserverPropChangeListenerDemo() {
 		view = new MyView();
 		model = new MyModel(); 
 		model.addObserver(view);
 	}
 
-	public static void main(String[] av) {
-		ObserverPropChangeListenerDemo me = new ObserverPropChangeListenerDemo();
-		me.demo();
-	}
-
-	public void demo() {
+	public void runTheMainApplication() {
 		model.changeSomething();
 	}
 
