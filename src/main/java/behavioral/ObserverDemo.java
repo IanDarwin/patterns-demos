@@ -9,6 +9,7 @@ import java.util.Observer;
  * see the ObserverPropChangeListenerDemo instead of this class.
  * @author Ian Darwin
  */
+@SuppressWarnings("deprecation")
 public class ObserverDemo extends Object {
 	MyView view;
 	MyModel model;

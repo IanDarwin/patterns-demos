@@ -51,7 +51,7 @@ public class FactoryDemo {
 		final String clazzName = props.getProperty(name);
 		@SuppressWarnings("unchecked")
 		final Class<T> c = (Class<T>) Class.forName(clazzName);
-		final T o = c.newInstance();
+		final T o = c.getConstructor().newInstance();
 		return o;
 	}
 
