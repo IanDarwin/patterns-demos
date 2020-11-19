@@ -31,7 +31,7 @@ public class ReloadingFactory {
 	public static MessageRenderer getMessageRenderer() {
 		try {
 			return (MessageRenderer) 
-				Class.forName(getConfigProperty("renderer")).newInstance();
+				Class.forName(getConfigProperty("renderer")).getConstructor().newInstance();
 		} catch (Exception e) {
 			throw new RuntimeException("Cant load Renderer " + e, e);
 		}
@@ -45,7 +45,7 @@ public class ReloadingFactory {
 			if (clazzName == null) {
 				throw new RuntimeException("Config property " + name + " not found.");
 			}
-			return (T) Class.forName(clazzName).newInstance();
+			return (T) Class.forName(clazzName).getConstructor().newInstance();
 		} catch (Exception e) {
 			throw new RuntimeException("Can't load Renderer " + e, e);
 		}

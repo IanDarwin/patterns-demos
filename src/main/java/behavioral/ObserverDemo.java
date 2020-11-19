@@ -5,9 +5,11 @@ import java.util.Observer;
 
 /**
  * A simple demo of Observable->Observer
- *
+ * Note that the actual Observer and Observable types are deprecated as of Java 9;
+ * see the ObserverPropChangeListenerDemo instead of this class.
  * @author Ian Darwin
  */
+@SuppressWarnings("deprecation")
 public class ObserverDemo extends Object {
 	MyView view;
 	MyModel model;
