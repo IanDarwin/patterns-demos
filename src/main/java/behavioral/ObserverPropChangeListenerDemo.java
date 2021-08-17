@@ -22,6 +22,7 @@ public class ObserverPropChangeListenerDemo extends Object {
 		model.addObserver(view);
 	}
 
+	/** Represents the main part of an application */
 	public void runTheMainApplication() {
 		model.changeSomething("A new value");
 		model.changeSomething("Another new value");
@@ -30,6 +31,7 @@ public class ObserverPropChangeListenerDemo extends Object {
 	/** The Observer normally maintains a view on the data */
 	class MyView implements PropertyChangeListener {
 		/** For now, we just print the fact that we got notified. */
+		@Override
 		public void propertyChange(PropertyChangeEvent ev) {
 			System.out.printf("update(%s->%s);\n", ev.getOldValue(), ev.getNewValue());
 		}
