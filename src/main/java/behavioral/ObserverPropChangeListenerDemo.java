@@ -23,7 +23,8 @@ public class ObserverPropChangeListenerDemo extends Object {
 	}
 
 	public void runTheMainApplication() {
-		model.changeSomething();
+		model.changeSomething("A new value");
+		model.changeSomething("Another new value");
 	}
 
 	/** The Observer normally maintains a view on the data */
@@ -37,14 +38,16 @@ public class ObserverPropChangeListenerDemo extends Object {
 	/** The Observable normally maintains the data */
 	class MyModel {
 		PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+		String state = "Initial state";
 
 		public void addObserver(PropertyChangeListener pcl) {
 			propertyChangeSupport.addPropertyChangeListener(pcl);
 		}
 
-		public void changeSomething() {
+		public void changeSomething(String newValue) {
 			// Notify observers of change
-			propertyChangeSupport.firePropertyChange("something", "old value", "Hello New Value");
+			propertyChangeSupport.firePropertyChange("something", state, newValue);
+			state = newValue;
 		}
 	}
 }
