@@ -20,7 +20,7 @@ public class FactoryDemo {
 				"/patterns/creation/factory.config";
 
 	public static void main(String[] args) throws Exception {
-		MessageRenderer r =FactoryDemo.getBean("renderer", MessageRenderer.class);
+		MessageRenderer r = FactoryDemo.getBean("renderer", MessageRenderer.class);
 		System.out.println("Renderer is of type " + r.getClass().getSimpleName());
 		r.renderMessage("Hello from the main program");
 	}
