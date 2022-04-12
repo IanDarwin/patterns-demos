@@ -17,7 +17,7 @@ import java.util.Properties;
 public class FactoryDemo {
 
 	private static final String FACTORY_CONFIG_RESOURCE_NAME = 
-				"/patterns/creation/factory.config";
+				"/creation/factory.config";
 
 	public static void main(String[] args) throws Exception {
 		MessageRenderer r = FactoryDemo.getBean("renderer", MessageRenderer.class);
