@@ -17,24 +17,24 @@ public class ObserverDemo extends Object {
 	public ObserverDemo() {
 
 		view = new MyView();
-
 		model = new MyModel(); 
 		model.addObserver(view);
-
 	}
 
 	public static void main(String[] av) {
 		ObserverDemo me = new ObserverDemo();
-		me.demo();
+		me.runTheMainApplication();
 	}
 
-	public void demo() {
+	/** Represents the main part of an application */
+	public void runTheMainApplication() {
 		model.changeSomething();
 	}
 
 	/** The Observer normally maintains a view on the data */
 	class MyView implements Observer {
 		/** For now, we just print the fact that we got notified. */
+		@Override
 		public void update( Observable obs, Object x ) {
 			System.out.println("update(" + obs + "," + x + ");");
 		}
