@@ -20,8 +20,9 @@ public class FactoryDemo {
 				"/creation/factory.config";
 
 	public static void main(String[] args) throws Exception {
-		MessageRenderer r = FactoryDemo.getBean("renderer", MessageRenderer.class);
-		System.out.println("Renderer is of type " + r.getClass().getSimpleName());
+		MessageRenderer r = 
+				FactoryDemo.getBean("renderer", MessageRenderer.class);
+		System.out.println("Renderer is of type " + r.getClass().getName());
 		r.renderMessage("Hello from the main program");
 	}
 
@@ -30,7 +31,7 @@ public class FactoryDemo {
 	static {
 		try {
 			InputStream stream = 
-			FactoryDemo.class.getResourceAsStream(FACTORY_CONFIG_RESOURCE_NAME);
+			   FactoryDemo.class.getResourceAsStream(FACTORY_CONFIG_RESOURCE_NAME);
 			if (stream == null) {
 				throw new ExceptionInInitializerError("Can't load properties file from classpath: " + FACTORY_CONFIG_RESOURCE_NAME);
 			}
@@ -40,7 +41,7 @@ public class FactoryDemo {
 		}
 	}
 
-	/** Construct and return a bean whose declared class is clasz
+	/** Construct and return a bean whose declared class is clazz
 	 * and whose implementing class is the value of "bean" in a props file.
 	 * @param name - The name the Bean should have in the props/config
 	 * @param clazz - the declared (often an interface) class
@@ -51,8 +52,7 @@ public class FactoryDemo {
 		final String clazzName = props.getProperty(name);
 		@SuppressWarnings("unchecked")
 		final Class<T> c = (Class<T>) Class.forName(clazzName);
-		final T o = c.getConstructor().newInstance();
-		return o;
+		return c.getConstructor().newInstance();
 	}
 
 }
