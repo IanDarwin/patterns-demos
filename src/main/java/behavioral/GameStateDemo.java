@@ -6,7 +6,9 @@ import java.io.InputStreamReader;
 
 /**
  * A simple demo of using a State machine implemented as Java classes.
- * A text-mode game, and, not intended to be a full RPG game, sorry. 
+ * A text-mode game, and, not intended to be a full RPG game, sorry,
+ * but at the beginning of (computer) time, the only games were text games
+ * like Crowley's Adventure and later, Michael Toy's curses-based Rogue.
  * This is NOT the only way to implement state machines;
  * they have been done for years in many languages as
  * e.g., transition tables of integers, pointers to structures, etc.
