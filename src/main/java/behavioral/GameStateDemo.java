@@ -28,6 +28,11 @@ public class GameStateDemo {
 
 	enum Command { LOOK, ENTER, EXIT, QUIT }
 
+	void enterState(State state) {
+		this.state = state;
+		state.lookAround();
+	}
+
 	abstract class State {
 		public abstract void lookAround();
 		public abstract void goInside();
@@ -42,16 +47,34 @@ public class GameStateDemo {
 		}
 	}
 
+	public State outdoorsState = new State() {
+
+		@Override
+		public void lookAround() {
+			display("You are in a clearing in the Unchanging Woods. There is a little cabin.");
+		}
+
+		@Override
+		public void goInside() {
+			enterState(inHallwayState);
+		}
+
+		@Override
+		public void goOutside() {
+			display("You are already outside, fool!");
+		}
+	};
+
 	public State inHallwayState = new State() {
 		public void lookAround() {
 			display("You are in a hallway. There is a door here");
 		}
 		public void goInside() {
-			display("You are in a room");
-			state = inRoomState;
+			enterState(inRoomState);
 		}
 		public void goOutside() {
-			display("You are already in the hallway");
+			display("You are leaving the cabin.");
+			enterState(outdoorsState);
 		}
 	};
 
@@ -64,8 +87,7 @@ public class GameStateDemo {
 			display("You are already in the room");
 		}
 		public void goOutside() {
-			display("You are in a hallway");
-			state = inHallwayState;
+			enterState(inHallwayState);
 		}
 	};
 
@@ -97,7 +119,7 @@ public class GameStateDemo {
 		System.out.println(mesg);
 	}
 
-	private final State INITIAL_STATE = inHallwayState;
+	private final State INITIAL_STATE = outdoorsState;
 
 	private State state = INITIAL_STATE;
 
