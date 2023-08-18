@@ -5,8 +5,9 @@ package structure.proxy;
  * @author Ian Darwin
  */
 public class SimpleProxyDemo {
+	final static boolean useProxy = true;
 
-	/** Here we show the whole thing in operation. */
+	/** Simple Hand-coded Proxy in operation. */
 	public static void main(String[] args) {
 
 		// Proxy is commonly used with some kind of creational method which
@@ -21,6 +22,9 @@ public class SimpleProxyDemo {
 
 	public static QuoteServer getQuoteServer() {
 		final QuoteServer target = new QuoteServerImpl();
+		if (!useProxy) {
+			return target;
+		}
 		QuoteServer proxy = new QuoteServer() {
 			public String getQuote() {
 				System.out.println("Calling getQuote()");
