@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>com.darwinsys</groupId>
 			<artifactId>darwinsys-api</artifactId>
-			<version>1.5.14</version>
+			<version>1.7.6</version>
 		</dependency>
 
 		<!-- javax.interceptor, used in one Proxy example -->
